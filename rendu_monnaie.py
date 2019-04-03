@@ -8,7 +8,8 @@ Use % to get rest of int div
 Use raw_input() function to get 
 """
 
-somme = 1253
+somme = 345
+
 print("Vous avez donné :", somme, "euros")
 billet100 = somme // 100
 reste100 = somme % 100
