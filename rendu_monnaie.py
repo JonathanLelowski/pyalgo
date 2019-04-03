@@ -8,9 +8,16 @@ Use % to get rest of int div
 Use raw_input() function to get 
 """
 
-somme = 345
+#Prix démandé
+prix = 3
 
-print("Vous avez donné :", somme, "euros")
+#Argent donné par le client
+argent = 50
+
+somme = argent - prix
+
+print("Vous avez donné :", argent, "euros")
+print("Votre achat coûte :", prix, "euros")
 billet100 = somme // 100
 reste100 = somme % 100
 billet50 = reste100 // 50
@@ -27,7 +34,7 @@ piece1 = reste2 // 1
 reste1 = reste2 % 1
 
 #La machine vous rend
-print("La machine vous rend :")
+print("La caissière vous rend :", somme, "euros")
 print (billet100, "x 100€")
 print (billet50, "x 50€")
 print (billet20, "x 20€")
