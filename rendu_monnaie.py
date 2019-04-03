@@ -9,6 +9,7 @@ Use raw_input() function to get
 """
 
 #Prix démandé
+
 prix = 3
 
 #Argent donné par le client
@@ -16,8 +17,35 @@ argent = 50
 
 somme = argent - prix
 
-print("Vous avez donné :", argent, "euros")
 print("Votre achat coûte :", prix, "euros")
+print("Vous avez donné :", argent, "euros")
+
+if (reste100 < 0:
+        billet100 = 
+
+if (left100 > 0):
+    nbBill = left100 // 50
+    leftCoins = left100 % 50
+
+        if (left50 > 0):
+            nbBill = left50 // 20
+            leftCoins = left50 % 20
+
+            if (left20 > 0):
+                nbBill = left20 // 10
+                leftCoins = left20 % 10
+
+                if (left10 > 0):
+                    nbCoins = left10 // 2
+                    leftCoins = left 10 % 2
+
+else:
+    if (somme == totalDue)
+        print ("merci")
+    else:
+        print ("Il n'y a pas assez d'argent")
+
+
 billet100 = somme // 100
 reste100 = somme % 100
 billet50 = reste100 // 50
