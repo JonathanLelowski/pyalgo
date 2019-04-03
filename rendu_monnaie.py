@@ -9,7 +9,7 @@ Use raw_input() function to get
 """
 
 somme = 170
-print("Vous devez :", somme, "euros")
+print("Vous avez donné :", somme, "euros")
 billet100 = somme // 100
 reste100 = somme % 100
 billet50 = reste100 // 50
