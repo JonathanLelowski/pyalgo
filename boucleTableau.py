@@ -24,6 +24,19 @@ def getGreaterOf(firstVal, secondVal):
         else:
                 return secondVal
 
+"""
+compare function
+@param firstVal First value to compare
+@param secondVal Second value to compare
+@param howTo Mode de comparaison souhaité
+@return greater or lower value of two depends on howto params
+"""
+
+def compare(firstVal, secondVal, desc=True):
+        if (desc):
+                return getLowerOf(firstVal, secondVal)
+        
+        return getGreaterOf(firstVal, secondVal)
 
 #Déclaration du tableau de démonstration
 monTableau = [15,3,25,12,7,-15]
@@ -40,14 +53,14 @@ for indice, val in enumerate(monTableau):
 #Déterminer la valeur la plus petite
 valeurMinimale = monTableau[0]
 for val in monTableau[1:]:
-        valeurMinimale = getLowerOf(valeurMinimale, val)
+        valeurMinimale = compare(valeurMinimale, val)
 print("La valeur minimale est :", valeurMinimale)
 
 
 #Déterminer la valeur la plus grande
 valeurMaximale = monTableau[0]
 for val in monTableau[1:]:
-         valeurMaximale = getGreaterOf(valeurMaximale, val)
+         valeurMaximale = compare(valeurMaximale, val)
 print("La valeur maximale est :", valeurMaximale)
 
 #Déterminer la valeur la plus petite (fonction min)
