@@ -67,8 +67,6 @@ def max(anArray):
 """
 average function
 @param anArray Array from 
-
-
 """
 def average(anArray):
         total = 0
@@ -78,10 +76,16 @@ def average(anArray):
                 nbItems = nbItems + 1
         return total/ nbItems
 
+def fact(anArray):
+        fact = 1
+        for indice in range (len(monTableauFact)):
+                fact = fact * monTableauFact[indice]
+        return fact
 
 #Déclaration du tableau de démonstration
 monTableau = [15,3,25,12,7,-15]
 monAutreTableau = [5, 48, 56, -5, -13, 24, 4, 11]
+monTableauFact = [5, 2, 3]
 
 #Simple poor loop
 for indice, val in enumerate(monTableau):
@@ -115,3 +119,6 @@ print("La moyenne de mon tableau est :", average(monTableau))
 
 #Moyenne de monAutreTableau
 print("La moyenne de mon autre tableau est :", average(monAutreTableau))
+
+#Factorielle de monTableau
+print("la factorielle de mon tableau est :", fact(monTableauFact))
