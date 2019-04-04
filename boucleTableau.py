@@ -40,16 +40,14 @@ for indice, val in enumerate(monTableau):
 #Déterminer la valeur la plus petite
 valeurMinimale = monTableau[0]
 for val in monTableau[1:]:
-        if  val < valeurMinimale :
-                valeurMinimale = val
+        valeurMinimale = getLowerOf(valeurMinimale, val)
 print("La valeur minimale est :", valeurMinimale)
 
 
 #Déterminer la valeur la plus grande
 valeurMaximale = monTableau[0]
 for val in monTableau[1:]:
-        if  val > valeurMaximale :
-                valeurMaximale = val
+         valeurMaximale = getGreaterOf(valeurMaximale, val)
 print("La valeur maximale est :", valeurMaximale)
 
 #Déterminer la valeur la plus petite (fonction min)
