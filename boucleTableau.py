@@ -77,10 +77,10 @@ def average(anArray):
         return total/ nbItems
 
 def fact(anArray):
-        fact = 1
-        for indice in range (len(monTableauFact)):
-                fact = fact * monTableauFact[indice]
-        return fact
+        total = 1
+        for val in anArray:
+                total = total * val
+        return total
 
 #Déclaration du tableau de démonstration
 monTableau = [15,3,25,12,7,-15]
@@ -122,3 +122,6 @@ print("La moyenne de mon autre tableau est :", average(monAutreTableau))
 
 #Factorielle de monTableau
 print("la factorielle de mon tableau est :", fact(monTableauFact))
+
+#Fact
+print(fact(monTableau))
