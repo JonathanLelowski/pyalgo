@@ -4,6 +4,27 @@
 Tableau de valeurs et Boucle
 """
 
+"""
+getLowerOf function
+return the lowest value of two params
+"""
+def getLowerOf(firstVal, secondVal):
+        if firstVal < secondVal:
+                return firstVal
+        else:
+                return secondVal
+
+"""
+getGreaterOf function
+return the greater value of two params
+"""
+def getGreaterOf(firstVal, secondVal):
+        if firstVal > secondVal:
+                return firstVal
+        else:
+                return secondVal
+
+
 #Déclaration du tableau de démonstration
 monTableau = [15,3,25,12,7,-15]
 
