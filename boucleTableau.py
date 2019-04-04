@@ -38,8 +38,50 @@ def compare(firstVal, secondVal, desc=True):
         
         return getGreaterOf(firstVal, secondVal)
 
+"""
+min function
+@param anArray The array from which I want to get the min value
+@return theMin the min value of anArray
+"""
+
+def min(anArray):
+        theMin = anArray[0]
+        for value in anArray[1:]:
+                theMin = compare(theMin, value, True)
+
+        return theMin
+
+"""
+max function
+@param anArray The array from which I want to get the max value
+@return theMax the max value of anArray
+"""
+
+def max(anArray):
+        theMax = anArray[0]
+        for value in anArray[1:]:
+                theMax = compare(theMax, value, False)
+
+        return theMax
+
+"""
+average function
+@param anArray Array from 
+
+
+"""
+def average(anArray):
+        total = 0
+        nbItems = 0
+        for val in anArray:
+                total = total + val
+                nbItems = nbItems + 1
+        return total/ nbItems
+
+
 #Déclaration du tableau de démonstration
 monTableau = [15,3,25,12,7,-15]
+monAutreTableau = [5, 48, 56, -5, -13, 24, 4, 11]
 
 #Simple poor loop
 for indice, val in enumerate(monTableau):
@@ -53,20 +95,23 @@ for indice, val in enumerate(monTableau):
 #Déterminer la valeur la plus petite
 valeurMinimale = monTableau[0]
 for val in monTableau[1:]:
-        valeurMinimale = compare(valeurMinimale, val)
+        valeurMinimale = compare(valeurMinimale, val, True)
 print("La valeur minimale est :", valeurMinimale)
-
 
 #Déterminer la valeur la plus grande
 valeurMaximale = monTableau[0]
 for val in monTableau[1:]:
-         valeurMaximale = compare(valeurMaximale, val)
+         valeurMaximale = compare(valeurMaximale, val, False)
 print("La valeur maximale est :", valeurMaximale)
 
 #Déterminer la valeur la plus petite (fonction min)
-valeurMin = min(monTableau)
-print("La valeur min est :", valeurMin)
+print("La valeur min est :", min(monTableau))
 
 #Déterminer la valeur la plus grande (fonction max)
-valeurMax = max(monTableau)
-print("La valeur max est :", valeurMax)
+print("La valeur max est :", max(monTableau))
+
+#Moyenne de monTableau
+print("La moyenne de mon tableau est :", average(monTableau))
+
+#Moyenne de monAutreTableau
+print("La moyenne de mon autre tableau est :", average(monAutreTableau))
