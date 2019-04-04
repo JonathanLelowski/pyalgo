@@ -19,17 +19,17 @@ for indice, val in enumerate(monTableau):
 #Déterminer la valeur la plus petite
 valeurMinimale = monTableau[0]
 for val in monTableau[1:]:
-        if  monTableau[indice] < valeurMinimale :
-                valeurMinimale = monTableau[indice]
+        if  val < valeurMinimale :
+                valeurMinimale = val
 print("La valeur minimale est :", valeurMinimale)
 
 
 #Déterminer la valeur la plus grande
 valeurMaximale = monTableau[0]
 for val in monTableau[1:]:
-        if  monTableau[indice] > valeurMaximale :
-                valeurMaximale = monTableau[indice]
-print("La valeur max est :", valeurMaximale)
+        if  val > valeurMaximale :
+                valeurMaximale = val
+print("La valeur maximale est :", valeurMaximale)
 
 #Déterminer la valeur la plus petite (fonction min)
 valeurMin = min(monTableau)
