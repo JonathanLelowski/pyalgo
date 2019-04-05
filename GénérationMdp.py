@@ -16,12 +16,7 @@ tableauCaract = ["*", ",", ";", "/", "+", "-", ")", "(", "[", "]"]
 tableauLettreMin = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 grandTableau = [tableauLettreMaj, tableauChiffre, tableauCaract, tableauLettreMin]
 
-#print(grandTableau[0])
-#print(grandTableau[1])
-#print(grandTableau[2])
-#print(grandTableau[3])
-
-#Var 
+#Vars
 nbCaract = 0
 passwordtr = str() 
 maj = str()
@@ -32,19 +27,20 @@ from random import *
 nbCaract = int(uniform(8, 12))
 #print("nombre de caractère :", nbCaract)
 
-#Déterminer les caractères obligatoires du mdp
-#Maj
+#Déterminer le caractère obligatoire "Maj" du mdp
 indiceMaj = int(uniform(0, len(tableauLettreMaj)))
 maj = tableauLettreMaj[indiceMaj]
-print("La majuscule obligatoire :", maj)
-#Chiffre
+##print("La majuscule obligatoire :", maj)
+
+#Déterminer le caractère obligatoire "Chiffre" du mdp
 indiceChiffre = int(uniform(0, len(tableauChiffre)))
 chiffre = tableauChiffre[indiceChiffre]
-print("Le chiffre obligatoire :", chiffre)
-#Caract
+##print("Le chiffre obligatoire :", chiffre)
+
+#Déterminer le caractère obligatoire "Caractère" du mdp
 indiceCaract = int(uniform(0, len(tableauCaract)))
 caract = tableauCaract[indiceCaract]
-print("Le caractère obligatoire :", caract)
+##print("Le caractère obligatoire :", caract)
 
 #Déterminer les caractères restants du password tronqué "passwordtr"
 if len(passwordtr) < nbCaract-3:
@@ -56,13 +52,13 @@ if len(passwordtr) < nbCaract-3:
         val = grandTableau[whichType][indice]
         #print(val)
         passwordtr = passwordtr + val
-    print("première partie du mdp :", passwordtr)
+    ##print("première partie du mdp :", passwordtr)
 
-#Association password + chiffre + Lettre + Caract
+#Association password tronqué + chiffre + Lettre + Caract
 passwordInt3 = passwordtr + maj + chiffre + caract
-print(passwordInt3)
+##print(passwordInt3)
 
 #Mélange du password
 import random
 passwordFinal = "".join(random.sample(passwordInt3,len(passwordInt3)))
-print(passwordFinal)
+print("Voici votre mot de passe aléatoire :", passwordFinal)
