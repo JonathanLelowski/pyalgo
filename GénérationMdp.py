@@ -13,17 +13,17 @@ Fonction : fonction (algo) RANDOM (x,y) retourne 1 nb aléatoire compris entre x
 tableauLettreMaj = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 tableauChiffre = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 tableauCaract = ["*", ",", ";", "/", "+", "-", ")", "(", "[", "]"]
-tableauLettreMin = ["a", "b"]
+tableauLettreMin = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 grandTableau = [tableauLettreMaj, tableauChiffre, tableauCaract, tableauLettreMin]
 
-print(grandTableau[0])
-print(grandTableau[1])
-print(grandTableau[2])
-print(grandTableau[3])
+#print(grandTableau[0])
+#print(grandTableau[1])
+#print(grandTableau[2])
+#print(grandTableau[3])
 
 #Var 
 nbCaract = 0
-password = str() 
+passwordtr = str() 
 maj = str()
 chiffre = str()
 caract = str()
@@ -36,26 +36,33 @@ nbCaract = int(uniform(8, 12))
 #Maj
 indiceMaj = int(uniform(0, len(tableauLettreMaj)))
 maj = tableauLettreMaj[indiceMaj]
-print(maj)
+print("La majuscule obligatoire :", maj)
 #Chiffre
 indiceChiffre = int(uniform(0, len(tableauChiffre)))
 chiffre = tableauChiffre[indiceChiffre]
-print(chiffre)
+print("Le chiffre obligatoire :", chiffre)
 #Caract
 indiceCaract = int(uniform(0, len(tableauCaract)))
 caract = tableauCaract[indiceCaract]
-print(caract)
+print("Le caractère obligatoire :", caract)
 
-#Déterminer les caractères restants du mdp
-if len(password) < nbCaract-3:
+#Déterminer les caractères restants du password tronqué "passwordtr"
+if len(passwordtr) < nbCaract-3:
     for i in range(nbCaract-3):
         whichType = int(uniform(0,4))
-        print("tableau choisi :", whichType)
+        #print("tableau choisi :", whichType)
         indice = int(uniform(0,len(grandTableau[whichType])))
         #print(indice)
         val = grandTableau[whichType][indice]
         #print(val)
-        password = password + val
-    print("première partie du mdp :", password)
+        passwordtr = passwordtr + val
+    print("première partie du mdp :", passwordtr)
 
 #Association password + chiffre + Lettre + Caract
+passwordInt3 = passwordtr + maj + chiffre + caract
+print(passwordInt3)
+
+#Mélange du password
+import random
+passwordFinal = "".join(random.sample(passwordInt3,len(passwordInt3)))
+print(passwordFinal)
