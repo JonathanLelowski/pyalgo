@@ -23,42 +23,55 @@ maj = str()
 chiffre = str()
 caract = str()
 
-from random import *
-nbCaract = int(uniform(8, 12))
+import random
+#Déterminer le nombre de caractères du mdp
+nbCaract = random.randint(8,12)
 #print("nombre de caractère :", nbCaract)
 
+"""
 #Déterminer le caractère obligatoire "Maj" du mdp
-indiceMaj = int(uniform(0, len(tableauLettreMaj)))
+"""
+indiceMaj = random.randint(0, len(tableauLettreMaj)-1)
 maj = tableauLettreMaj[indiceMaj]
-##print("La majuscule obligatoire :", maj)
+#print("La majuscule obligatoire :", maj)
 
+"""
 #Déterminer le caractère obligatoire "Chiffre" du mdp
-indiceChiffre = int(uniform(0, len(tableauChiffre)))
+"""
+indiceChiffre = random.randint(0, len(tableauChiffre)-1)
 chiffre = tableauChiffre[indiceChiffre]
-##print("Le chiffre obligatoire :", chiffre)
+#print("Le chiffre obligatoire :", chiffre)
 
+"""
 #Déterminer le caractère obligatoire "Caractère" du mdp
-indiceCaract = int(uniform(0, len(tableauCaract)))
+"""
+indiceCaract = random.randint(0, len(tableauCaract)-1)
 caract = tableauCaract[indiceCaract]
-##print("Le caractère obligatoire :", caract)
+#print("Le caractère obligatoire :", caract)
 
+"""
 #Déterminer les caractères restants du password tronqué "passwordtr"
+"""
 if len(passwordtr) < nbCaract-3:
     for i in range(nbCaract-3):
-        whichType = int(uniform(0,4))
+        whichType = random.randint(0,3)
         #print("tableau choisi :", whichType)
-        indice = int(uniform(0,len(grandTableau[whichType])))
+        indice = random.randint(0,len(grandTableau[whichType])-1)
         #print(indice)
         val = grandTableau[whichType][indice]
         #print(val)
         passwordtr = passwordtr + val
-    ##print("première partie du mdp :", passwordtr)
+    #print("première partie du mdp :", passwordtr)
 
+"""
 #Association password tronqué + chiffre + Lettre + Caract
+"""
 passwordInt3 = passwordtr + maj + chiffre + caract
-##print(passwordInt3)
+#print(passwordInt3)
 
+"""
 #Mélange du password
+"""
 import random
 passwordFinal = "".join(random.sample(passwordInt3,len(passwordInt3)))
 print("Voici votre mot de passe aléatoire :", passwordFinal)
