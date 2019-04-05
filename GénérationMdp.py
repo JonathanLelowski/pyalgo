@@ -50,7 +50,7 @@ caract = tableauCaract[indiceCaract]
 #print("Le caractère obligatoire :", caract)
 
 """
-#Déterminer les caractères restants du password tronqué "passwordtr"
+#Déterminer les caractères restants du password                                                                                                                                                         tronqué "passwordtr"
 """
 if len(passwordtr) < nbCaract-3:
     for i in range(nbCaract-3):
